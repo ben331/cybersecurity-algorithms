@@ -2,11 +2,11 @@ package model;
 
 public class BasicOperator {
 	
-	public static String caesarsCypher57(String cleartext, int displacement) {
+	public static String caesarsCypher26(String cleartext, int displacement) {
 		String cyphertext = "";
 		
 		//Minimum equivalent displacement
-		displacement = displacement % 57;
+		displacement = displacement % 26;
 		
 		char cypherletter;
 		char letter;
@@ -17,13 +17,13 @@ public class BasicOperator {
 		}else{
 			
 			//Turn positive displacement
-			if(displacement < 0) displacement += 57;
+			if(displacement < 0) displacement += 26;
 			
 			//Displace every letter unless 'spaces'
 			for(int i=0; i<cleartext.length(); i++) {
 				letter = cleartext.charAt(i);
 				if(letter != 32) {
-					cypherletter = (char) ((letter - 65 + displacement)%57 + 65) ;
+					cypherletter = (char) ((letter - 65 + displacement)%26 + 65) ;
 				}else {
 					cypherletter = ' ';
 				}

@@ -18,7 +18,7 @@ public class Main {
 		do {
 			System.out.println("Select option:"
 					+ "\n -1. Exit"
-					+ "\n 1. Caesars cypher 57"
+					+ "\n 1. Caesars cypher 26"
 					+ "\n 2. Caesars cypher 222"
 					+ "\n 3. Create an alphabet"
 					+ "\n 4. Cypher monoalphabetic"
@@ -33,11 +33,11 @@ public class Main {
 				System.out.println("\nWrite message:");
 				String cleartext = r.nextLine();
 				
-				System.out.println("\nType displacement (number between 1-56)");
+				System.out.println("\nType displacement (number between 1-26)");
 				int displacement = r.nextInt();
 				r.nextLine();
 				
-				System.out.println("\nCyphertext: \n"+BasicOperator.caesarsCypher57(cleartext, displacement));
+				System.out.println("\nCyphertext: \n"+BasicOperator.caesarsCypher26(cleartext, displacement));
 				break;
 			case 2:
 				System.out.println("\nWrite message:");
