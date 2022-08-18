@@ -65,6 +65,17 @@ public class Alphabet {
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
+	public String getWords() {
+		String words = "";
+		Tuple<Float, WordTranslation>[] array = (Tuple<Float, WordTranslation>[]) heap.getArray();
+		
+		for(int i=0; i<array.length; i++) {
+			words += array[i].getValue().toString()+"\n";
+		}
+		return words;
+	}
+	
 
 	public int getSize() {
 		return size;

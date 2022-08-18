@@ -94,4 +94,49 @@ public class BasicOperator {
 		}	
 		return cleartext;
 	}
+	
+
+	public static String vigenereCypher(String cleartext, String key) {
+		String cyphertext = "";
+		
+		char letter;
+		int counter = 0;
+		for(int i=0; i<cleartext.length(); i++) {
+			letter = cleartext.charAt(i);
+			if(letter != 32) {
+				cyphertext += (char) ( ((letter - 65) + (key.charAt(counter) - 65))%26 + 65); 
+				counter = (counter+1)%key.length();
+			}else {
+				cyphertext+=" ";
+			}
+		}
+		
+		return cyphertext;
+	}
+	
+	public static String vigenereDecypher(String cyphertext, String key) {
+		String cleartext = "";
+		
+		char cypherletter;
+		char letter;
+		int counter = 0;
+		for(int i=0; i<cyphertext.length(); i++) {
+			cypherletter = cyphertext.charAt(i);
+			if(cypherletter != 32) {
+				letter = (char) ((cypherletter - 65) - (key.charAt(counter) - 65)); 
+				if(letter < 0)
+					letter = (char) (letter + 26 + 65);
+				else
+					letter = (char) (letter + 65);
+				
+				cleartext += letter;
+				
+				counter = (counter+1)%key.length();
+			}else {
+				cleartext+=" ";
+			}
+		}
+		
+		return cleartext;
+	}
 }

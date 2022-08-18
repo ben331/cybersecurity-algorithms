@@ -11,4 +11,9 @@ public class WordTranslation {
 		this.main = main;
 		this.foreign = foreign;
 	}
+	
+	@Override
+	public String toString() {
+		return main + " - " + foreign;
+	}
 }
